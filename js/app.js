@@ -94,6 +94,7 @@ const updateTotal = () => {
 loadProducts();
 
 let mybutton = document.getElementById("back-to-top");
+mybutton.style.display = 'none';
 window.onscroll = function () {
   scrollFunction();
 };
