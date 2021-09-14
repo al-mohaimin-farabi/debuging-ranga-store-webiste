@@ -8,6 +8,7 @@
 
 body {
   overflow-x: hidden;
+  background-color: rgb(26, 34, 37) !important;
   font-family: "Montserrat", sans-serif;
 }
 header {
@@ -16,7 +17,7 @@ header {
   background-repeat: no-repeat;
   background-position-x: right;
   padding: 15px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 header h1 {
   margin: 0px;
@@ -28,7 +29,7 @@ header h1::after {
   position: absolute;
   bottom: -15px;
   left: 50%;
-  content: "পচন্দ আপনার, পৌছে দেওয়ার দায়িত্ব আমাদের";
+  content: "“ পছন্দ আপনার, পৌছে দেওয়ার দায়িত্ব আমাদের ”";
   font-size: 16px;
   font-weight: 700;
   color: #608754;
@@ -44,7 +45,7 @@ nav {
 
 nav a {
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 10px;
   margin-bottom: 0px;
   font-size: 22px;
   text-decoration: none;
@@ -52,9 +53,11 @@ nav a {
   text-align: center;
   padding: 16px 12px 5px;
   position: relative;
+  color: #fff;
 }
 nav a:hover {
   text-decoration: none;
+  color: #fff;
 }
 /* // animmation */
 nav a::after {
@@ -65,8 +68,8 @@ nav a::after {
   right: 0;
   height: 2px;
   transform: scaleX(0);
-  background: #333;
-  transition: 0.5s transform cubic-bezier(0.06, 0.9, 0.28, 1);
+  background: #198754;
+  transition: 0.4s transform cubic-bezier(0.06, 0.9, 0.28, 1);
 }
 
 nav a:hover::after {
@@ -80,10 +83,7 @@ nav a:hover::after {
   position: relative;
   text-align: center;
 }
-.search-box:focus {
-  outline: none;
-  border: 1px solid #5cb85c;
-}
+
 .search-box {
   position: relative;
   border: 1px solid #d9534f;
@@ -92,12 +92,21 @@ nav a:hover::after {
   display: inline-block;
   margin: 50px auto;
   padding: 20px;
+  background-color: #94908e;
+}
+.search-box::placeholder {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+}
+.search-box:focus {
+  outline: none;
+  border: 1px solid #5cb85c;
 }
 .search-button {
   display: inline-block;
   padding: 10px 25px !important;
   font-size: 20px !important;
-  background-color: #5cb85c;
+  background-color: #5cb85cea;
   color: #fff !important;
   border-radius: 25px;
   position: absolute;
@@ -105,7 +114,10 @@ nav a:hover::after {
   top: 50%;
   transform: translateY(-50%);
 }
-
+.search-button:hover {
+  transform: translateY(-50%) scale(0.9);
+  transition: all 0.1s;
+}
 #all-products {
   padding-left: 5px;
 }
@@ -114,10 +126,11 @@ nav a:hover::after {
   height: 155px;
 }
 .card {
+  color: #fff;
   position: relative;
   border: 1px solid rgba(201, 48, 44, 0.5) !important;
   border: 1px solid transparent;
-  background-color: rgba(233, 248, 233, 0.541);
+  background-color: rgba(73, 73, 73, 0.87);
 }
 
 .card-text {
@@ -128,9 +141,7 @@ nav a:hover::after {
 .card-text i {
   color: #5cb85c;
 }
-.text-custom {
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.425);
-}
+
 /* if you enable this section add to cart button will not work */
 
 /* .card:before {
@@ -192,8 +203,9 @@ nav a:hover::after {
   transition: all 0.4s;
 }
 .cart {
+  background-color: rgb(148, 144, 142);
   width: 350px;
-  /* border: 1px solid green; */
+  border: 1px solid green;
   padding: 20px 10px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.158);
   border-radius: 5px;
@@ -215,6 +227,29 @@ nav a:hover::after {
   background-color: #5cb85c;
   color: #fff !important;
   box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.158);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 20px;
+  display: none;
+}
+.back-to-top::after {
+  position: absolute;
+  top: -25px;
+  right: -10px;
+  content: "Back To Top";
+  border-radius: 5px;
+  visibility: hidden;
+  padding: 2px;
+  font-size: 12px;
+  background-color: cornsilk;
+  color: black;
+  /* transition: all 0.3s; */
+}
+.back-to-top:hover::after {
+  visibility: visible;
 }
 @media only screen and (max-width: 768px) {
   .cart {

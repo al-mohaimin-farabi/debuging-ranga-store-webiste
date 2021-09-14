@@ -8,26 +8,29 @@ const loadProducts = () => {
 
 // show all product in UI 
 const showProducts = (products) => {
-  console.log(products.image);
+  const starsTotal = products.length;
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
     const image = product.image;
     const div = document.createElement("div");
-    div.classList.add("col","card-group");
+    div.classList.add("col", "card-group");
+    
     div.innerHTML = `
     <div class="card h-100 z-index">
         <img src="${image}" class="card-img-top mx-auto product-image mt-5" alt="...">
+
       <div class="card-body">
         <h3 class="card-title">${product.title}</h3>
         <p class="card-text">Category: ${product.category}</p>
-        <p class="card-text">User Rating: <span class="text-custom text-warning">${product.rating.rate}/5</span> &nbsp;&nbsp;<i class="fas fa-user"></i> ${product.rating.count}</p>
-
+        <p class="card-text">User Rating: <span class="text-warning">${product.rating.rate}/5</span>&nbsp;&nbsp;<i class="fas fa-user"></i> ${product.rating.count}</p>
+        <h3 class="mt-2">Price: $ ${product.price}</h3>
       </div>
+
       <div class="card-footer bg-transparent border-0">
-        <h2 class="mt-2">Price: $ ${product.price}</h2>
         <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success mb-3">add to cart</button>
         <button id="details-btn" class="btn btn-danger mb-3">Details</button>
       </div>
+
     </div>`;
     document.getElementById("all-products").appendChild(div);}
 };
@@ -89,3 +92,19 @@ const updateTotal = () => {
   console.log(grandTotal);
 };
 loadProducts();
+
+let mybutton = document.getElementById("back-to-top");
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 30 ||
+    document.documentElement.scrollTop > 30
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
