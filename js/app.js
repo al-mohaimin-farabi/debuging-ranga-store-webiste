@@ -8,7 +8,6 @@ const loadProducts = () => {
 
 // show all product in UI 
 const showProducts = (products) => {
-  const starsTotal = products.length;
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
     const image = product.image;
@@ -61,8 +60,6 @@ const updatePrice = (id, value) => {
 
 // set innerText function
 const setInnerText = (id, value) => {
-  console.log(id);
-  console.log(value);
   document.getElementById(id).innerText = value.toFixed(2);
 };
 
@@ -89,7 +86,6 @@ const updateTotal = () => {
     getInputValue("price") + getInputValue("delivery-charge") +
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
-  console.log(grandTotal);
 };
 loadProducts();
 
