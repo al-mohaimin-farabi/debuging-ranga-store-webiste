@@ -21,7 +21,7 @@ const showProducts = (products) => {
       <div class="card-body">
         <h3 class="card-title">${product.title}</h3>
         <p class="card-text">Category: ${product.category}</p>
-        <p class="card-text">User Rating: <span class="text-warning">${product.rating.rate}/5</span>&nbsp;&nbsp;<i class="fas fa-user"></i> ${product.rating.count}</p>
+        <p class="card-text">User Rating: <span class="text-warning text-coustom">${product.rating.rate}/5</span>&nbsp;&nbsp;<i class="fas fa-user"></i> ${product.rating.count}</p>
         <h3 class="mt-2">Price: $ ${product.price}</h3>
       </div>
 
